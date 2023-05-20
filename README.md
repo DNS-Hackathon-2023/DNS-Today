@@ -13,18 +13,18 @@ What does DNS traffic look like today?
     - DNSCrypt (draft-denis-dprive-dnscrypt: udp/443 & tcp/443)
     - DNSCurve (udp/53)
 - Publicly available resolvers lists
-    - https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/odoh-relays.md
-    - https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/odoh-servers.md
-    - https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/onion-services.md
-    - https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/opennic.md
-    - https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/parental-control.md
-    - https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/public-resolvers.md
-    - https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/relays.md
-    - https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v2/onion-services.md
-    - https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v2/opennic.md
-    - https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v2/parental-control.md
-    - https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v2/public-resolvers.md
-    - https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v2/relays.md
+    - https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/odoh-relays.md
+    - https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/odoh-servers.md
+    - https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/onion-services.md
+    - https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/opennic.md
+    - https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/parental-control.md
+    - https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/public-resolvers.md
+    - https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/relays.md
+    - https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v2/onion-services.md
+    - https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v2/opennic.md
+    - https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v2/parental-control.md
+    - https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v2/public-resolvers.md
+    - https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v2/relays.md
     - https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v1/dnscrypt-resolvers.csv
 - What common user OS/apps create what kinds of traffic?
 - Detecting security anomalies? (flow data)
