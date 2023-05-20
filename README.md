@@ -30,6 +30,9 @@ What does DNS traffic look like today?
     - https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v2/relays.md
     - https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v1/dnscrypt-resolvers.csv
     - parsing the above: https://github.com/DNSCrypt/dnscrypt-proxy/wiki/stamps
+- For network operators - processing sFlow data
+    - use filter to only process DNS related traffic (udp/53 or tcp/853 or udp/853 or specific ip&port of public resolvers from lists above)
+    - anonymise customer IPs (modify https://github.com/phaag/nfdump/blob/master/src/nfanon/nfanon.c)
 - What common user OS/apps create what kinds of traffic?
 - Detecting security anomalies? (flow data)
 - How can technical end users find out how their DNS resolution is happening?
