@@ -12,7 +12,7 @@ What does DNS traffic look like today?
     - DoQ (RFC9250: udp/853, possibly udp/443 for stub to recursive)
     - DNSCrypt (draft-denis-dprive-dnscrypt: udp/443 & tcp/443)
     - DNSCurve (udp/53)
-- Publicly available resolvers lists
+- Publicly available DNSCrypt and DoH servers
     - https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/odoh-relays.md
     - https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/odoh-servers.md
     - https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/onion-services.md
