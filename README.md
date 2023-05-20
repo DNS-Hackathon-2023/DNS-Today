@@ -11,6 +11,7 @@ What does DNS traffic look like today?
     - DoH (RFC8484: tcp/443 HTTP/2 & HTTPS)
     - DoQ (RFC9250: udp/853, possibly udp/443 for stub to recursive)
     - DNSCrypt (draft-denis-dprive-dnscrypt: udp/443 & tcp/443)
+    - DNSCurve (udp/53)
 - What common user OS/apps create what kinds of traffic?
 - Detecting security anomalies? (flow data)
 - How can technical end users find out how their DNS resolution is happening?
