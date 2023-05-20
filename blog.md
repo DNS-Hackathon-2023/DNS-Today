@@ -18,6 +18,7 @@ Running NSD w/ dnstap on fpdns.se with wildcard subdomains.
         - dig @9.9.9.9 do53.quad9.fpdns.se
         - dig @8.8.8.8 do53.quad8.fpdns.se
     - DoH:
+        - sudo apt-get install curl
         - curl "https://dns.quad9.net:5053/dns-query?name=doh.quad9.fpdns.se"
         - curl "https://dns.google/resolve?name=doh.quad8.fpdns.se"
     - DoT:
@@ -25,4 +26,4 @@ Running NSD w/ dnstap on fpdns.se with wildcard subdomains.
         - kdig -d @9.9.9.9 +tls-ca +tls-host=dns.quad9.net dot.quad9.fpdns.se
         - kdig -d @8.8.8.8 +tls-ca +tls-host=dns.google.com dot.quad8.fpdns.se
 - Observe differences in the queries arriving at the authoritative side
-    - todo
+    - No noticable differences between protocols seen from the authoritative side.
