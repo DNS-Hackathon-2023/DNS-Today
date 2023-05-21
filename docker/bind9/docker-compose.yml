@@ -1,0 +1,77 @@
+version: '2.2'
+services:
+  # doh-server:
+  #   image: satishweb/doh-server
+  #   hostname: doh-server
+  #   ports:
+  #     - 8053:8053/tcp
+  #   networks:
+  #     - default
+  #   environment:
+  #     DEBUG: "0"
+  #     # Upstream DNS server: proto:host:port
+  #     # We are using OpenDNS DNS servers as default,
+  #     # Here is the list of addresses: https://use.opendns.com/
+  #     UPSTREAM_DNS_SERVER: "udp:208.67.222.222:53"
+  #     DOH_HTTP_PREFIX: "/getnsrecord"
+  #     DOH_SERVER_LISTEN: ":8053"
+  #     DOH_SERVER_TIMEOUT: "10"
+  #     DOH_SERVER_TRIES: "3"
+  #     DOH_SERVER_VERBOSE: "true"
+  #     # You can add more variables here or as docker secret and entrypoint
+  #     # script will replace them inside doh-server.conf file
+  #   volumes:
+  #     - ./data/doh/conf/doh-server.conf:/server/doh-server.conf
+  #     # Mount app-config script with your customizations
+  #     - ./data/doh/app-config:/app-config
+  #   deploy:
+  #     replicas: 1
+  #     # placement:
+  #     #   constraints:
+  #     #     - node.labels.type == worker
+  #   restart: 'unless-stopped'
+  bind9:
+    # image: fike/bind9
+    image: ubuntu/bind9:9.18-22.04_beta
+    hostname: ns1
+    user: bind
+    working_dir: /var/bind/cache
+    ports:
+      - 53:53/tcp
+      - 53:53/udp
+      - 443:443/tcp
+      - 853:853/tcp
+        # - 8053:443/tcp
+    networks:
+      - default
+        #command: tail -f /etc/bind/named.conf
+    
+    command: named -g
+    volumes:
+      # - ./data/ns1/conf:/etc/bind
+      - ./data/ns1/zones:/etc/bind/zones
+      # 
+      - ./data/ns1/conf/rndc.key:/etc/bind/rndc.key
+      - ./data/ns1/conf/named.conf:/etc/bind/named.conf
+      - ./data/ns1/conf/cert_chain.pem:/etc/bind/cert_chain.pem
+      - ./data/ns1/conf/priv_key.pem:/etc/bind/priv_key.pem
+      # 
+      - ./data/ns1/var/bind/cache:/var/bind/cache:rw
+      - YOUR_PATH/docker/datadump:/datadump:rw
+    # restart: 'unless-stopped'
+  # client-dns-tester:
+  #   image: ubuntu:latest
+  #   hostname: client
+  #   # ports:
+  #   #   - 53:53/tcp
+  #   #   - 53:53/udp
+  #     # - 8053:8053/tcp
+  #   networks:
+  #     - default
+  #   # volumes:
+  #   #   - ./data/ns1/zones:/etc/bind9/zones
+  #   #   - ./data/ns1/conf/named.conf.local:/etc/bind9/named.conf.local
+  #   restart: 'unless-stopped'
+networks:
+  default:
+

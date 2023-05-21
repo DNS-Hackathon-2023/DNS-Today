@@ -1,0 +1,66 @@
+version: '3'
+services:
+    os01:
+        image: opensearchproject/opensearch:2.6.0
+        # image: docker.elastic.co/elasticsearch/elasticsearch:7.13.1
+        # <<: *_os_instance
+        container_name: os01
+          #        command: touch /usr/share/elasticsearch/logs/testfile && ls -lai /usr/share/elasticsearch/logs
+        # command: tail -f /etc/hosts
+        environment:
+            - node.name=os01
+            # - discovery.seed_hosts=$OS_NODE2,$OS_NODE3
+            # default
+            - cluster.name=os-arkime-cluster
+            # - cluster.initial_master_nodes=os01
+            - cluster.initial_master_nodes=os01
+            # - cluster.initial_master_nodes=$OS_NODE1,$OS_NODE2,$OS_NODE3
+            - bootstrap.memory_lock=true # along with the memlock settings below, disables swapping
+            - "OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m" # minimum and maximum Java heap size,
+            - DISABLE_SECURITY_PLUGIN=true
+            - DISABLE_INSTALL_DEMO_CONFIG=true
+        volumes:
+          #  - ./data/OS_NODE1:/usr/share/opensearch/data:rw
+        #   - ./data/arkime_logs:/usr/share/elasticsearch/logs:rw
+          - ./data/arkime_logs:/usr/share/opensearch/logs:rw
+        ulimits:
+            nofile:
+                soft: 65535
+                hard: 65535
+            memlock:
+                soft: -1
+                hard: -1
+        ports:
+        - 9200:9200
+        networks:
+            - arkime-os
+    arkime:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        depends_on:
+            - os01
+            # - $OS_NODE2
+            # - $OS_NODE3
+        environment:
+            # - OS_HOST=$OS_NODE1
+            # - OS_HOST=10.10.12.211
+            - OS_HOST=os01
+            - OS_PORT=9200
+        ports:
+            - 8005:8005
+        volumes:
+            - ./config.ini:/opt/arkime/etc/config.ini
+            - ./data/arkime_config:/data/config
+            - ./data/arkime_logs:/data/logs
+            - YOUR_PATH/docker/datadump:/data/pcap
+        networks:
+            - arkime-os
+
+# volumes:
+#     arkime_config:
+#     arkime_logs:
+
+
+networks:
+    arkime-os:
