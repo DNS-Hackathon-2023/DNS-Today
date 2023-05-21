@@ -26,3 +26,6 @@ What does DNS traffic look like today?
     - SIDN
 3. Writing guide in parallel (blog style?)
 
+## Visibility for nameserver operators
+
+![resolver locations by `ns1.dns.nl` anycast site](./nl_charts.png)
