@@ -3,25 +3,25 @@
 
 ## DNS Testing
 in the lab we raised a DNS Server (NS1) that respond to 
-53 UDP
-53 TCP
-443 TCP / DoH
-853 TCP / DoT
+* 53 UDP
+* 53 TCP
+* 443 TCP / DoH
+* 853 TCP / DoT
 
 ## Client for testing:
-dig - testing 53 tcp/udp
-DoH - use dig
-DoT - use kdig
+* Dig - testing 53 tcp/udp
+* DoH - use dig
+* DoT - use kdig
 
 ## Arikme - L7 Visability
 In Addition we raised Akime Server that get's pacap files and visualize the traffic:
-url:       http://10.10.12.211:8005/ 
-user:      admin 
-Password:  admin
+* url:       http://10.10.12.211:8005/ 
+* user:      admin 
+* Password:  admin
 
 Home page 
-https://github.com/arkime/arkime/blob/main/README.md
-https://arkime.com/architecture
+* https://github.com/arkime/arkime/blob/main/README.md
+* https://arkime.com/architecture
 
 # Data Capture and display
 1. on the host - create pipe
