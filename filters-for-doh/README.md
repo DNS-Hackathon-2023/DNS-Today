@@ -1,4 +1,4 @@
-# DoH Filters
+# Generating DNS Filters
 
 This is a collection of scripts designed to assist network operators in
 observing DNS traffic on their network, even when it is obscured by encryption
