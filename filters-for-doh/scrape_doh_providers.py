@@ -87,6 +87,6 @@ def get_filter():
         answers = query(o['hostname'])
         if answers:
             for answer in answers:
-                filter_list += filter_format(answer.to_text(), o['port'])
+                filter_list += filter_format(answer.to_text(), o['port'].replace(':',''))
     return list(set(filter_list))
 

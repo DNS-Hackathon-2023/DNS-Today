@@ -15,14 +15,14 @@ def filter_format(ipaddr):
     if "." in ipaddr: # IPv4
         if ":" in ipaddr: # Non-default port
             s = ipaddr.split(':')
-            return aux_filter(s[0], s[1])
+            return aux_filter(s[0], s[1].replace(':',''))
         else:
             return aux_filter(ipaddr, "443")
     else: # IPv6
         if "]:" in ipaddr: # Non-default port
             ipaddr = ipaddr.replace("]:", "x")
             s = ipaddr.split('x')
-            return aux_filter(s[0][1:], s[1])
+            return aux_filter(s[0][1:], s[1].replace(':',''))
         else:
             return aux_filter(ipaddr[1:-1], "443")
 
