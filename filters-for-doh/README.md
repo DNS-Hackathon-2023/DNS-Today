@@ -11,6 +11,18 @@ online lists of popular DoH and DNSCrypt URLs. By using these filters, network
 operators can capture and analyze encrypted DNS traffic, gaining valuable
 insights into the DNS activity within their network.
 
+## Public lists
+The lists used for obtaining popular DoH and DNSCrypt servers are:
+- [DNSCrypt/dnscrypt-resolvers Github](https://github.com/DNSCrypt/dnscrypt-resolvers)
+- [curl/wiki/DNS-over-HTTPS Github](https://github.com/curl/curl/wiki/DNS-over-HTTPS)
+
+DNSCrypt provided [dnsstamps](https://github.com/DNSCrypt/dnscrypt-proxy/wiki/stamps) which
+could be decoded with a [python library](https://pypi.org/project/dnsstamps/).
+This provided the IPV4/6 addresses and ports used.
+
+curl provided a list of DoH URLs/hostnames which are resolved to ip addresses when generating
+the filter.
+
 ## Generating the filter
 The script generate_filter.py uses argparse to let the user specify what the
 resulting filter should contain with flags:
