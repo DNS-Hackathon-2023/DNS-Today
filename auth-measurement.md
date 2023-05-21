@@ -1,13 +1,4 @@
-# DNS Today Blog
-These are the steps we took, what we tried and what we uncovered. Less formal than the guide.
-
-## Data
-We gathered available data for analysis, this included:
-- SIDN .nl ccTLD (one day of anonymized auth. name server query data
-- todo
-
-
-## One-off Active Measurements
+# One-off Active Measurement 
 Running NSD w/ dnstap on fpdns.se with wildcard subdomains.
 - Select recursive resolver accepting multiple protocols:
     - Quad9: Do53, DoH, DoT
@@ -26,4 +17,6 @@ Running NSD w/ dnstap on fpdns.se with wildcard subdomains.
         - kdig -d @9.9.9.9 +tls-ca +tls-host=dns.quad9.net dot.quad9.fpdns.se
         - kdig -d @8.8.8.8 +tls-ca +tls-host=dns.google.com dot.quad8.fpdns.se
 - Observe differences in the queries arriving at the authoritative side
-    - No noticable differences between protocols seen from the authoritative side.
+
+## Results
+No noticable differences between client usage of protocols as seen from the authoritative side.
