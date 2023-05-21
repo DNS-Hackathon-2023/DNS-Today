@@ -1,3 +1,6 @@
+## LAB Overview
+![Lab](https://github.com/DNS-Hackathon-2023/DNS-Today/blob/ac452d03af0918691bc80475ad3079a758ed31cc/DNS%20Today%20-%20TinyLab.png?raw=true)
+
 ## DNS Testing
 in the lab we raised a DNS Server (NS1) that respond to 
 53 UDP
